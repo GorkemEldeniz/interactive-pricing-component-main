@@ -1,0 +1,232 @@
+@import "./reset.scss";
+@import "./variables.scss";
+@import "./range.scss";
+
+
+:root {
+  --range-color: hsl(224, 65%, 95%);
+}
+
+body,
+html {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  font-family: 'Manrope', sans-serif;
+  font-size: 15px;
+  background-color: $Very;
+  display: grid;
+  place-items: center;
+  background-image: url("../images/bg-pattern.svg");
+  background-size: 100% 60vh;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+
+
+  main {
+    position: relative;
+    width: 40%;
+    background-image: url("../images/pattern-circles.svg");
+    background-position: 50% 2rem;
+    background-repeat: no-repeat;
+
+
+    header {
+      padding-top: 4rem;
+      text-align: center;
+      margin-bottom: 4rem;
+
+      h1 {
+        font-size: 2rem;
+        color: $Dark;
+      }
+
+      p {
+        font-size: 1rem;
+        color: $Grayish;
+      }
+    }
+
+    section {
+      background-color: $White;
+      border-radius: 1rem;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      .infos {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .views {
+          color: $Grayish;
+          letter-spacing: 0.1ch;
+          text-transform: uppercase;
+        }
+
+        .price {
+          color: $Dark;
+          font-size: 2rem;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+
+          span {
+            min-width: 5rem;
+            font-size: 1rem;
+            color: $Grayish;
+            letter-spacing: 0.1ch;
+          }
+        }
+      }
+
+      .filter {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        justify-content: flex-end;
+
+        label {
+          color: $Grayish;
+          font-size: 0.75rem;
+          cursor: pointer;
+        }
+
+        .toggle {
+          position: relative;
+          background-color: $Light-2;
+          border-radius: 1rem;
+          width: 3rem;
+          height: 1.5rem;
+
+          &::before {
+            content: "";
+            border-radius: 50%;
+            transition: right 200ms ease;
+            background-color: $Very;
+            top: calc(50% - 0.5rem);
+            right: 0.2rem;
+            width: 1rem;
+            height: 1rem;
+            position: absolute;
+          }
+        }
+
+        input[type="checkbox"] {
+          appearance: none;
+          -moz-appearance: none;
+          -webkit-appearance: none;
+          position: absolute;
+          opacity: 0;
+          visibility: hidden;
+
+          &:checked+label {
+            background-color: $Soft-Cyan;
+          }
+
+          &:checked+label::before {
+            right: calc(100% - 1.2rem);
+          }
+        }
+
+        div {
+          font-size: 0.75rem;
+          color: $Light-Red;
+          background-color: $Light-Grayish-Red;
+          padding: 0.1rem 0.25rem;
+          border-radius: 0.5rem;
+          margin-right: 1rem;
+        }
+      }
+
+      .border {
+        width: 100%;
+        height: 1px;
+        background-color: $Light-1;
+      }
+
+      .bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+
+        ol {
+          display: flex;
+          padding: 0;
+          flex-direction: column;
+          gap: 1rem;
+          list-style: none;
+
+          li {
+            position: relative;
+            font-size: 0.75rem;
+            padding-left: 2rem;
+            color: $Grayish;
+
+            &::before {
+              content: "";
+              position: absolute;
+              background-image: url("../images/icon-check.svg");
+              left: 0;
+              top: calc(50% - 0.37rem);
+              background-repeat: no-repeat;
+              width: 1rem;
+              aspect-ratio: 1;
+              background-size: 0.75rem;
+              background-position: center;
+            }
+          }
+        }
+
+        button {
+          border-radius: 2rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: fit-content;
+          padding: 0.75rem 2.5rem;
+          border: none;
+          font-size: 1rem;
+          color: $Grayish;
+          background-color: $Dark;
+          cursor: pointer;
+
+          &:hover {
+            color: $White;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width:900px) {
+  main {
+    width: 90% !important;
+
+    .filter {
+      justify-content: center !important;
+    }
+  }
+}
+
+@media (max-width:450px) {
+  main {
+    .infos {
+      justify-content: center !important;
+    }
+
+    .filter {
+      flex-wrap: wrap;
+      gap: 0.5rem !important;
+    }
+
+    .bottom {
+      justify-content: center !important;
+    }
+  }
+}

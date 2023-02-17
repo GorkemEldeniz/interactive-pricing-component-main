@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="dist/main.css">
+  <title>Frontend Mentor | Interactive pricing component</title>
+</head>
+
+<body>
+  <main>
+    <header>
+      <h1>Simple, traffic-based pricing</h1>
+      <p> Sign-up for our 30-day trial. No credit card required.</p>
+    </header>
+
+    <section>
+      <div class="infos">
+        <div class="views">0K Pageviews</div>
+        <div class="price">
+          <div class="value">$0.00</div> <span class="period">/year</span>
+        </div>
+      </div>
+
+      <input class="range" type="range" value="0" name="" id="" min="0" max="10" step="2">
+
+      <div class="filter">
+        <label for="billing-method">Monthly Billing</label>
+        <input type="checkbox" id="billing-method">
+        <label class="toggle" tabindex="0" for="billing-method"></label>
+        <label id="year" for="billing-method">Yearly Billing</label>
+
+        <div>25% discount</div>
+      </div>
+
+      <div class="border"></div>
+
+      <div class="bottom">
+        <ol class="aspects">
+          <li>Unlimited websites</li>
+          <li>100% data ownership</li>
+          <li>Email reports</li>
+        </ol>
+
+        <button>Start my trial</button>
+      </div>
+    </section>
+  </main>
+
+
+  <script src="js/main.js" type="module"></script>
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+</body>
+
+</html>
